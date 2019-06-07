@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: X-dev
+  namespace: X
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - image: cr.agilicus.com/group/image:dev
+        name: X
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: X-stage
+  namespace: X
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - image: cr.agilicus.com/group/image:stage
+        name: X
