@@ -1,12 +1,22 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mycontainer-stage
   namespace: staging
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: container
   template:
+    metadata:
+      labels:
+        app: container
     spec:
       containers:
-      - image: yauritux/busybox-curl:stable
+      - command:
+        - sh
+        - -c
+        - until nslookup myservice; do echo waiting for myservice; sleep 2; done;
+        image: yauritux/busybox-curl:stable
         name: main

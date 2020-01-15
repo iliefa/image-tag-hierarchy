@@ -4,16 +4,19 @@ metadata:
   name: mycontainer-dev
   namespace: dev
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: container
-  replicas: 1
   template:
     metadata:
       labels:
         app: container
     spec:
       containers:
-      - image: busybox:latest
+      - command:
+        - sh
+        - -c
+        - until nslookup myservice; do echo waiting for myservice; sleep 2; done;
+        image: busybox:latest
         name: main
-        command: ['sh', '-c', 'until nslookup myservice; do echo waiting for myservice; sleep 2; done;']
