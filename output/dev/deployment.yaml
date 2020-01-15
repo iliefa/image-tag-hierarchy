@@ -1,12 +1,19 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mycontainer-dev
   namespace: dev
 spec:
+  selector:
+    matchLabels:
+      app: container
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: container
     spec:
       containers:
       - image: busybox:latest
         name: main
+        command: ['sh', '-c', 'until nslookup myservice; do echo waiting for myservice; sleep 2; done;']
