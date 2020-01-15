@@ -7,4 +7,4 @@ resources:
 images:
   - name: busybox
     newName: busybox
-    newTag: latest
+    newTag: "1.28"

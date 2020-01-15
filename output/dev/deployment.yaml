@@ -18,5 +18,5 @@ spec:
         - sh
         - -c
         - until nslookup myservice; do echo waiting for myservice; sleep 2; done;
-        image: busybox:latest
+        image: busybox:1.28
         name: main
