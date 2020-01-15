@@ -7,4 +7,4 @@ resources:
 images:
   - name: busybox
     newName: yauritux/busybox-curl
-    newTag: stable
+    newTag: latest
