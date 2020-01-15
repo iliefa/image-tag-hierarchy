@@ -1,4 +1,4 @@
-namespace: X
+namespace: staging
 nameSuffix: -stage
 
 resources:

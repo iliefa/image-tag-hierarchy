@@ -2,12 +2,12 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: X
+  name: mycontainer-staging
 spec:
   replicas: 1
   template:
     spec:
       containers:
-        - name: X
+        - name: main
           image: cr.agilicus.com/group/image
 
