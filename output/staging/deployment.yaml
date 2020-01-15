@@ -18,5 +18,5 @@ spec:
         - sh
         - -c
         - until nslookup myservice; do echo waiting for myservice; sleep 2; done;
-        image: yauritux/busybox-curl:stable
+        image: yauritux/busybox-curl:latest
         name: main
