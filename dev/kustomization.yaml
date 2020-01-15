@@ -5,6 +5,6 @@ resources:
   - dep.yaml
 
 images:
-  - name: cr.agilicus.com/group/image
-    newName: cr.agilicus.com/group/image
-    newTag: dev
+  - name: busybox
+    newName: busybox
+    newTag: latest

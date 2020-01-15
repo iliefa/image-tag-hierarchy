@@ -9,5 +9,5 @@ spec:
     spec:
       containers:
         - name: main
-          image: cr.agilicus.com/group/image
+          image: busybox
 
