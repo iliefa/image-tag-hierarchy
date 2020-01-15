@@ -1,0 +1,12 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mycontainer-dev
+  namespace: dev
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - image: busybox:latest
+        name: main
